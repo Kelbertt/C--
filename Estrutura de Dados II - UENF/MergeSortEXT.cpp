@@ -43,7 +43,7 @@ void criArquivoTeste(char *nome){
     fclose(f);
 }
 
-int criaArquivosOrdenados(char *nome){
+int criArquivosOrdenados(char *nome){
     int V[N];
     char novo[20];
     int cont = 0, total = 0;
@@ -151,7 +151,7 @@ void merge(char *nome, int K, int T){
 
 void mergeSortExterno(char *nome){
     char novo[20];
-    int K = criaArquivosOrdenados(nome);
+    int K = criArquivosOrdenados(nome);
     int i, T = N / (K + 1);
     printf("Nro de arquivos:%d\n",K);
     printf("K:%d\n",T);
