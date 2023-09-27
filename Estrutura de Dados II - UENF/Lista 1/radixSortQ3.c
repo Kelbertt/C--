@@ -57,7 +57,7 @@ int main(){
 	
 	printf("Array ordenado: \n");
 	for (int i = 0; i<n; i++){
-		printf("%d -", array[i]);
+		printf("%d - ", array[i]);
 	}
 	
 	return 0;
