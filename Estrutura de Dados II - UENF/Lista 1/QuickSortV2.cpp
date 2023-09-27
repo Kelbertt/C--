@@ -1,5 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
+
+void printfVet(int *V, int N){
+	int i;
+	for(i=0; i<N;i++)
+		printf("%2", V[i]);
+	printf("\n");
+}
+
+void printfLinha(){
+    printf("----------------------------------------------\n");
+}
+
 
 int particiona(int *V, int inicio, int final){
     int esq, dir, pivo, aux;
@@ -7,9 +20,9 @@ int particiona(int *V, int inicio, int final){
     dir = final;
     pivo = V[inicio];
     while (esq < dir){
-          while(V[esq] <= pivo)
+          while(esq <= final && V[esq] <= pivo)
           esq++;
-          while(V[dir] > pivo)
+          while(dir >= 0 && V[dir] > pivo)
           dir--;
           if(esq < dir){
                  aux = V[esq];
@@ -33,24 +46,17 @@ void quickSort( int *V, int inicio, int fim){
 
 int main(){
 	
-	int tamanho;
-	printf("Digite o tamanho do vetor: ");
-	scanf("%d", &tamanho);
+	int vet[7] = {23,4,57,-8,80,44,21};
+	int N = 7;
 	
-	int *arr = (int *)malloc(tamanho * sizeof(int));
-	printf("Digite os elementos do vetor: \n");
-	for(int i=0;i<tamanho;i++){
-		scanf("%d", &arr[i]);
-	}
+	printf("Sem ordenar: \n");
+	printfVet(vet, N);
+	printfLinha();
 	
-	quickSort(arr,0,tamanho-1);
+	quickSort(vet,0,N-1);
+	printf("Ordenado: \n");
+	printfVet(vet,N);
 	
-	printf("Vetor ordenado: \n");
-	for(int i=0; i< tamanho; i++){
-		printf("%d", arr[i]);
-	}
-	
-	free(arr);
-	
+	system("pause");
 	return 0;
 }
