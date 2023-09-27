@@ -28,18 +28,13 @@ void criaHeap(PriorityItem *vet, int pai, int fim){
      vet[pai] = aux;
 }
 
-//Função para construir o HeapMax
-void criaHeapMax(PriorityItem *vet, int N){
-	for(int i = (N-1)/2; i>=0; i--){
-		criaHeapMax(vet, 0);
-	}
-}
-
 // Criar heap & Ordenar dados
 void heapSort(PriorityItem *vet, int N){
      int i;
 	 PriorityItem aux;
-     criaHeapMax(vet, N);
+     for(i=(N - 1)/2; i>=0; i--){
+              criaHeap(vet, i, N-1);
+     }
      for (i= N-1; i>=0; i--){
          aux = vet[0];
          vet[0] = vet[i];
