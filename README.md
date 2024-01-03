@@ -1,2 +1,2 @@
-# C++
- Códigos em Linguagem C++ utilizado nas aulas de Programação na Uenf 
+# C
+ Projects in C building at Uenf 
